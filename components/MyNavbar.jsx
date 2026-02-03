@@ -26,6 +26,7 @@ import App from "./ui/SupportBtn";
 import { List, X } from "@phosphor-icons/react";
 import { Car } from "iconsax-react";
 import { ScaleLoader } from "react-spinners";
+import Facilities from "./ui/Facilities";
 
 export default function MyNavbar() {
   const token = Cookies.get("token");
@@ -240,6 +241,9 @@ export default function MyNavbar() {
           <NavbarItem>
             <App />
           </NavbarItem>
+          <NavbarItem>
+            <Facilities />
+          </NavbarItem>
         </NavbarContent>
 
         <NavbarContent justify="end">
@@ -276,7 +280,7 @@ export default function MyNavbar() {
                 className="font-Kalame items-center hidden md:flex"
               >
                 خروج
-                <SignOutIcon className="rotate-180" color="#ff0000" size={20} />
+                <SignOutIcon className="rotate-180" color="#fff" size={20} />
               </Button>
             ) : (
               <></>
