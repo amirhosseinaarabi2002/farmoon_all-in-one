@@ -22,6 +22,7 @@ const Facilities = () => {
         امکانات
       </Button>
       <Modal
+      size="full"
         backdrop="opaque"
         classNames={{
           backdrop:
@@ -41,13 +42,13 @@ const Facilities = () => {
               </ModalHeader>
               <ModalBody>
                 <div className="grid grid-cols-3 grid-rows-4 gap-6">
-                  <div className="rounded-xl bg-gray-100 py-5">
+                  <a href="/licenseStatus" className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_licesnse_status.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-20" />
                     <p className="text-center text-xs font-Kalame mt-2">وضعیت گواهینامه</p>
-                  </div>
+                  </a>
                   <div className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_license_negative.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-20" />
-                    <p className="text-center text-xs font-Kalame mt-2">نمره منفی گواهینامه</p>
+                    <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">نمره منفی گواهینامه</p>
                   </div>
                   <div className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_car_sanad.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-11" />

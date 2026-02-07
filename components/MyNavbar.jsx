@@ -376,6 +376,9 @@ export default function MyNavbar() {
               <div className="py-3 border-b border-gray-100">
                 <App />
               </div>
+              <div className="py-3 border-b border-gray-100">
+                <Facilities />
+              </div>
             </div>
 
             {/* User Info Section */}
