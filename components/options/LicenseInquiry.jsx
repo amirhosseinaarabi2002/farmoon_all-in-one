@@ -10,20 +10,25 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure,
+  addToast,
 } from "@heroui/react";
 import toast from "react-hot-toast";
-import getLicenseStatusApi from "@/api/facility/licenseStatus_api";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
+import { getLicenseStatusApi } from "@/api/facility/licenseStatus_api";
 
 const LicenseInquiry = () => {
   const [mobile, setMobile] = useState("");
   const [national, setNational] = useState("");
   const [loading, setLoading] = useState(false);
   const [licenses, setLicenses] = useState([]);
+  const router = useRouter();
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
+  const token = Cookies.get("token");
+
   const handleInquiry = async () => {
-    // ✅ validation
     if (!mobile || !national) {
       return toast.error("لطفا اطلاعات را کامل وارد کنید");
     }
@@ -36,26 +41,39 @@ const LicenseInquiry = () => {
       return toast.error("کد ملی نامعتبر است");
     }
 
+    // ✅ check token first
+    if (!token) {
+      addToast({
+        title: "ابتدا وارد حساب کاربری شوید",
+        promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+        variant: "flat",
+        color: "danger",
+      });
+      router.push("/loginOtp");
+      return;
+    }
+
     try {
       setLoading(true);
 
       const res = await getLicenseStatusApi(mobile, national);
 
-      // ✅ remove dummy rows
-      const validLicenses = res.filter(
-        (item) => item.nationalNo !== "-"
+      const validLicenses = res.filter((item) => item.nationalNo !== "-");
+
+      // ✅ store result for next page
+      localStorage.setItem(
+        "licenseStatusResult",
+        JSON.stringify(validLicenses)
       );
 
-      setLicenses(validLicenses);
-      onOpen();
+      // ✅ navigate to result page
+      router.push("/licenseStatusResult");
     } catch (error) {
-      console.error(error);
-      toast.error(
-        error.message === "User not logged in"
-          ? "ابتدا وارد حساب کاربری شوید"
-          : "خطا در دریافت اطلاعات"
-      );
-    } finally {
+      addToast({
+        title: error.message,
+        color: "danger",
+      });
+    }finally{
       setLoading(false);
     }
   };
@@ -64,30 +82,48 @@ const LicenseInquiry = () => {
     <>
       {/* Form */}
       <div className="flex flex-col gap-4 p-4">
-        <Input
-          label="شماره موبایل"
-          type="tel"
-          maxLength={11}
-          value={mobile}
-          onChange={(e) => setMobile(e.target.value)}
+        <h2 className="text-center">وضعیت گواهینامه</h2>
+        <img
+          src="/images/ic_licesnse_status.png"
+          alt="ic_licesnse_status"
+          className="w-28 mx-auto"
         />
-
+        <p className="text-center text-xs md:text-sm">
+          هزینه ی یکبار استعلام وضعیت گذاری ۱۶,170 تومان می باشد
+        </p>
+        <p className="text-center text-xs md:text-sm">
+          برای پیگیری وضعیت صدور گواهینامه اطلاعات زیر را تکمیل کنید
+        </p>
         <Input
           label="کد ملی"
           type="tel"
           maxLength={10}
           value={national}
           onChange={(e) => setNational(e.target.value)}
+          className="max-w-80 mx-auto"
+        />
+
+        <Input
+          label="شماره موبایل"
+          type="tel"
+          maxLength={11}
+          value={mobile}
+          onChange={(e) => setMobile(e.target.value)}
+          className="max-w-80 mx-auto"
         />
 
         <Button
-          color="primary"
+          size="lg"
           onPress={handleInquiry}
           isLoading={loading}
-          className="font-DanaDemiBold"
+          className="font-DanaDemiBold bg-teal-600 text-white w-80 mx-auto"
         >
-          استعلام گواهینامه
+          استعلام وضعیت گواهینامه
         </Button>
+        <p className="text-center text-xs md:text-sm">
+          در صورت داشتن هرگونه ابهام و یا سوال در مورد این سرویس می توانید از
+          منو در صفحه اصلی با پشتیبانی ارتباط بگیرید
+        </p>
       </div>
 
       {/* Result Modal */}
