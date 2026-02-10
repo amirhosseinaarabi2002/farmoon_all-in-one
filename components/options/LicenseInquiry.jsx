@@ -9,7 +9,6 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  useDisclosure,
   addToast,
 } from "@heroui/react";
 import toast from "react-hot-toast";
@@ -21,10 +20,7 @@ const LicenseInquiry = () => {
   const [mobile, setMobile] = useState("");
   const [national, setNational] = useState("");
   const [loading, setLoading] = useState(false);
-  const [licenses, setLicenses] = useState([]);
   const router = useRouter();
-
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const token = Cookies.get("token");
 
@@ -126,69 +122,7 @@ const LicenseInquiry = () => {
         </p>
       </div>
 
-      {/* Result Modal */}
-      <Modal
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-        backdrop="opaque"
-        size="lg"
-      >
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className="font-Kalame font-bold text-center">
-                نتیجه استعلام گواهینامه
-              </ModalHeader>
-
-              <ModalBody>
-                {licenses.length === 0 ? (
-                  <div className="text-center text-sm text-gray-500 py-4">
-                    اطلاعاتی یافت نشد
-                  </div>
-                ) : (
-                  <div className="flex flex-col gap-3">
-                    {licenses.map((item, index) => (
-                      <div
-                        key={index}
-                        dir="rtl"
-                        className="bg-gray-100 rounded-xl p-4 text-sm"
-                      >
-                        <div className="grid grid-cols-2 gap-2">
-                          <span>نام:</span>
-                          <span className="font-bold">{item.firstName}</span>
-
-                          <span>نام خانوادگی:</span>
-                          <span className="font-bold">{item.lastName}</span>
-
-                          <span>نوع گواهینامه:</span>
-                          <span className="font-bold">{item.title}</span>
-
-                          <span>وضعیت:</span>
-                          <span className="font-bold text-teal-700">
-                            {item.rahvarStatus}
-                          </span>
-
-                          <span>تاریخ چاپ:</span>
-                          <span>{item.printDate}</span>
-
-                          <span>مدت اعتبار:</span>
-                          <span>{item.validYears} سال</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </ModalBody>
-
-              <ModalFooter>
-                <Button variant="light" onPress={onClose}>
-                  بستن
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
+      
     </>
   );
 };

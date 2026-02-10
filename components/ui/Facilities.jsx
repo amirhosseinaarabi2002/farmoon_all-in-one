@@ -19,7 +19,7 @@ const Facilities = () => {
         onPress={onOpen}
       >
         <Element4 size="28" color="#0f766e" />
-        امکانات
+        سایر امکانات 
       </Button>
       <Modal
       size="full"
@@ -46,10 +46,10 @@ const Facilities = () => {
                     <img src="/images/ic_licesnse_status.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-20" />
                     <p className="text-center text-xs font-Kalame mt-2">وضعیت گواهینامه</p>
                   </a>
-                  <div className="rounded-xl bg-gray-100 py-5">
+                  <a href="/negative" className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_license_negative.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-20" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">نمره منفی گواهینامه</p>
-                  </div>
+                  </a>
                   <div className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_car_sanad.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-11" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">وضعیت سند و کارت ماشین</p>
