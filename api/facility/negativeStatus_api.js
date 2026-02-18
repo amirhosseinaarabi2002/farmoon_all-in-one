@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 
 const NEGATIVE_STATUS_API_URL = "https://www.penalty.vsrv.ir/api/top/licenseNegativePointInquiry"
 
-export const getLicenseStatusApi = async (mobile, nationalCode, licenseNo) => {
+export const getNegativeStatusApi = async (mobile, nationalCode, licenseNo) => {
   try {
     const token = Cookies.get("token");
 

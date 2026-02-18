@@ -85,7 +85,7 @@ const LicenseInquiry = () => {
           className="w-28 mx-auto"
         />
         <p className="text-center text-xs md:text-sm">
-          هزینه ی یکبار استعلام وضعیت گذاری ۱۶,170 تومان می باشد
+          هزینه ی یکبار استعلام وضعیت صدور گواهینامه ۱۶,170 تومان می باشد
         </p>
         <p className="text-center text-xs md:text-sm">
           برای پیگیری وضعیت صدور گواهینامه اطلاعات زیر را تکمیل کنید

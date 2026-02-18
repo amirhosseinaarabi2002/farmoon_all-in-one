@@ -9,7 +9,7 @@ import {
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
-import { getLicenseStatusApi } from "@/api/facility/licenseStatus_api";
+import { getNegativeStatusApi } from "@/api/facility/negativeStatus_api";
 
 const LicenseInquiry = () => {
   const [mobile, setMobile] = useState("");
@@ -54,7 +54,7 @@ const LicenseInquiry = () => {
       setLoading(true);
 
       // ✅ send licenseNo to API
-      const res = await getLicenseStatusApi(
+      const res = await getNegativeStatusApi(
         mobile,
         national,
         licenseNo
@@ -91,9 +91,12 @@ const LicenseInquiry = () => {
         className="w-28 mx-auto"
       />
 
-      <p className="text-center text-xs md:text-sm">
-        برای استعلام نمره منفی اطلاعات زیر را وارد کنید
-      </p>
+       <p className="text-center text-xs md:text-sm">
+          هزینه ی یکبار استعلام نمره منفی ۱۶,170 تومان می باشد
+        </p>
+        <p className="text-center text-xs md:text-sm">
+          برای پیگیری وضعیت نمره منفی اطلاعات زیر را تکمیل کنید
+        </p>
 
       {/* National */}
       <Input
@@ -118,7 +121,7 @@ const LicenseInquiry = () => {
       {/* ✅ NEW license number */}
       <Input
         label="شماره گواهینامه"
-        type="text"
+        type="tel"
         value={licenseNo}
         onChange={(e) => setLicenseNo(e.target.value)}
         className="max-w-80 mx-auto"

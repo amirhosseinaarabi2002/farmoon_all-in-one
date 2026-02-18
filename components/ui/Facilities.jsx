@@ -54,10 +54,10 @@ const Facilities = () => {
                     <img src="/images/ic_car_sanad.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-11" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">وضعیت سند و کارت ماشین</p>
                   </div>
-                  <div className="rounded-xl bg-gray-100 py-5">
+                  {/* <div className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_freeway.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-12" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">عوارض آزادراهی</p>
-                  </div>
+                  </div> */}
                   <div className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_active_plaque.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-20" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">پلاک فعال</p>
@@ -66,18 +66,18 @@ const Facilities = () => {
                     <img src="/images/ic_annual.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-13" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">عوارض سالیانه خودرو</p>
                   </div>
-                  <div className="rounded-xl bg-gray-100 py-5">
+                  {/* <div className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_tarh.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-12" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">طرح ترافیک تهران</p>
-                  </div>
+                  </div> */}
                   <div className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_car_pricing.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-16" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">قیمت گذاری خودرو</p>
                   </div>
-                  <div className="rounded-xl bg-gray-100 py-5">
+                  {/* <div className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/esalat.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-16" />
                     <p className="text-center text-xs font-Kalame mt-1.5 line-clamp-1">بیمه شخص ثالث</p>
-                  </div>
+                  </div> */}
                   <div className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_driving_test.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-12" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">آزمون آیین نامه</p>
