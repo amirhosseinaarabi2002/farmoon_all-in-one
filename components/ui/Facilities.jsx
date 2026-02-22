@@ -58,10 +58,10 @@ const Facilities = () => {
                     <img src="/images/ic_freeway.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-12" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">عوارض آزادراهی</p>
                   </div> */}
-                  <div className="rounded-xl bg-gray-100 py-5">
+                  <a href="/active" className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_active_plaque.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-20" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">پلاک فعال</p>
-                  </div>
+                  </a>
                   <div className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_annual.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-13" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">عوارض سالیانه خودرو</p>
@@ -78,18 +78,18 @@ const Facilities = () => {
                     <img src="/images/esalat.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-16" />
                     <p className="text-center text-xs font-Kalame mt-1.5 line-clamp-1">بیمه شخص ثالث</p>
                   </div> */}
-                  <div className="rounded-xl bg-gray-100 py-5">
+                  <a href="https://fc27.ir/" className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/ic_driving_test.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-12" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">آزمون آیین نامه</p>
-                  </div>
-                  <div className="rounded-xl bg-gray-100 py-5">
+                  </a>
+                  <a href="/?tab=sumation" className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/car_total.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-20" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">مجموع خلافی خودرو</p>
-                  </div>
-                  <div className="rounded-xl bg-gray-100 py-5">
+                  </a>
+                  <a href="/motor/?tab=sumation" className="rounded-xl bg-gray-100 py-5">
                     <img src="/images/motorcycle_total.png" alt="farmoon icon" className="flex justify-center-safe items-center-safe mx-auto w-18" />
                     <p className="text-center text-xs font-Kalame mt-2 line-clamp-1">مجموع خلافی موتور</p>
-                  </div>
+                  </a>
                 </div>
               </ModalBody>
             </>
