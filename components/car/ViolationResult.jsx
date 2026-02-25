@@ -199,7 +199,7 @@ const ViolationResult = () => {
         window.open(response.data.PaymentLink, "_self");
       } else if (response.status === 480) {
         toast.success(
-          "تمام قبوض انتخاب شده، قبلا از طریق این سامانه پرداخت شده اند."
+          "تمام قبوض انتخاب شده، قبلا از طریق این سامانه پرداخت شده اند.",
         );
       }
     } catch (error) {
@@ -214,50 +214,49 @@ const ViolationResult = () => {
   };
 
   const getCarViolationImageSubmit = async (uniqueId, serialNumber, index) => {
-  const requestData = {
-    plate: {
-      "2digit": violationData?.plaque["2digit"],
-      "3digit": violationData?.plaque["3digit"],
-      alphabet: violationData?.plaque["alphabet"],
-      iran: violationData?.plaque["iran"],
-    },
-    mobile_number: mobileNumber,
-    UniqueID: uniqueId,
-    national_code: natCode,
-    serialNo: serialNumber,
-    type: "car",
-  };
-  try {
-    setLoadingStates((prev) => {
-      const newState = [...prev];
-      newState[index] = true;
-      return newState;
-    });
+    const requestData = {
+      plate: {
+        "2digit": violationData?.plaque["2digit"],
+        "3digit": violationData?.plaque["3digit"],
+        alphabet: violationData?.plaque["alphabet"],
+        iran: violationData?.plaque["iran"],
+      },
+      mobile_number: mobileNumber,
+      UniqueID: uniqueId,
+      national_code: natCode,
+      serialNo: serialNumber,
+      type: "car",
+    };
+    try {
+      setLoadingStates((prev) => {
+        const newState = [...prev];
+        newState[index] = true;
+        return newState;
+      });
 
-    const response = await getCarViolationImageApi(requestData);
-    if (response.status === 200) {
-      setImageUrl(response.data.vehicle_image);
+      const response = await getCarViolationImageApi(requestData);
+      if (response.status === 200) {
+        setImageUrl(response.data.vehicle_image);
 
-      // Navigate to the new image route instead of opening new tab
-      const imageUrl = encodeURIComponent(response.data.vehicle_image);
-      router.push(`/violation-image?imageUrl=${imageUrl}`);
-      
-    } else if (response.status === 499) {
-      setActiveModalType("payment");
-      setShowViolationImage(true);
-    } else {
-      toast.error(response.message);
+        // Navigate to the new image route instead of opening new tab
+        const imageUrl = encodeURIComponent(response.data.vehicle_image);
+        router.push(`/violation-image?imageUrl=${imageUrl}`);
+      } else if (response.status === 499) {
+        setActiveModalType("payment");
+        setShowViolationImage(true);
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error("ظاهرا دسترسی شما به اینترنت قطع شده است");
+    } finally {
+      setLoadingStates((prev) => {
+        const newState = [...prev];
+        newState[index] = false;
+        return newState;
+      });
     }
-  } catch (error) {
-    toast.error("ظاهرا دسترسی شما به اینترنت قطع شده است");
-  } finally {
-    setLoadingStates((prev) => {
-      const newState = [...prev];
-      newState[index] = false;
-      return newState;
-    });
-  }
-};
+  };
 
   const getChargeWalletGateWaySubmit = async (amount) => {
     const requestBodyParameter = {
@@ -692,7 +691,7 @@ const ViolationResult = () => {
                       className="font-DanaDemiBold mx-2 w-full"
                       onPress={() =>
                         getChargeWalletGateWaySubmit(
-                          violationPrice?.image_price
+                          violationPrice?.image_price,
                         )
                       }
                     >
