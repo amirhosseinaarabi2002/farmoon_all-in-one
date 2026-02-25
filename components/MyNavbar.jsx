@@ -333,7 +333,7 @@ export default function MyNavbar() {
                   className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-4 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
                   onClick={handleNavLinkClick}
                 >
-                  {/* <Car size="28" color="#0f766e" /> */}
+                  <Car size="28" color="#0f766e" />
                   خلافی خودرو با جزئیات
                 </Link>
 
@@ -346,7 +346,7 @@ export default function MyNavbar() {
                     closeDrawer();
                   }}
                 >
-                  {/* <Car size="28" color="#0f766e" /> */}
+                  <Car size="28" color="#0f766e" />
                   مجموع خلافی خودرو
                 </Link>
 
@@ -355,7 +355,7 @@ export default function MyNavbar() {
                   className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-2 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
                   onClick={handleNavLinkClick}
                 >
-                  {/* <MotorcycleIcon size="28" color="#0f766e" /> */}
+                  <MotorcycleIcon size="28" color="#0f766e" />
                   خلافی موتور با جزئیات
                 </Link>
 
@@ -368,7 +368,7 @@ export default function MyNavbar() {
                     closeDrawer();
                   }}
                 >
-                  {/* <MotorcycleIcon size="28" color="#0f766e" /> */}
+                  <MotorcycleIcon size="28" color="#0f766e" />
                   مجموع خلافی موتور
                 </Link>
                 <Link
@@ -381,6 +381,8 @@ export default function MyNavbar() {
                   }}
                 >
                   {/* <WalletCheck size="28" color="#0f766e" /> */}
+                                    <img src="/images/ic_licesnse_status.png" alt="farmoon icon" className="w-10" />
+
                   وضعیت صدور گواهینامه
                 </Link>
                 <Link
@@ -393,6 +395,8 @@ export default function MyNavbar() {
                   }}
                 >
                   {/* <WalletCheck size="28" color="#0f766e" /> */}
+                                    <img src="/images/ic_license_negative.png" alt="farmoon icon" className="w-10" />
+
                   نمره منفی گواهینامه
                 </Link>
                 <Link
@@ -405,6 +409,8 @@ export default function MyNavbar() {
                   }}
                 >
                   {/* <WalletCheck size="28" color="#0f766e" /> */}
+                                    <img src="/images/ic_active_plaque.png" alt="farmoon icon" className="w-10" />
+
                   پلاک فعال
                 </Link>
                 <Link
@@ -417,6 +423,8 @@ export default function MyNavbar() {
                   }}
                 >
                   {/* <WalletCheck size="28" color="#0f766e" /> */}
+                                    <img src="/images/ic_car_sanad.png" alt="farmoon icon" className="w-6" />
+
                   وضعیت سند و کارت ماشین
                 </Link>
                 <Link
@@ -429,6 +437,8 @@ export default function MyNavbar() {
                   }}
                 >
                   {/* <WalletCheck size="28" color="#0f766e" /> */}
+                                    <img src="/images/ic_driving_test.png" alt="farmoon icon" className="w-6" />
+
                   آزمون آیین نامه
                 </Link>
                 <Link
@@ -441,6 +451,8 @@ export default function MyNavbar() {
                   }}
                 >
                   {/* <WalletCheck size="28" color="#0f766e" /> */}
+                                    <img src="/images/ic_car_pricing.png" alt="farmoon icon" className="w-10" />
+
                   قیمت گذاری خودرو
                 </Link>
                 {/* <div className="py-4 border-b border-gray-100">
