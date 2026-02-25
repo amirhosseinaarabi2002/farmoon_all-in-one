@@ -327,66 +327,126 @@ export default function MyNavbar() {
             {/* Scrollable Section */}
             <div className="flex-1 overflow-y-auto px-6">
               {/* Navigation Links */}
-              <div className="flex flex-col gap-y-2">
+              <div className="flex flex-col gap-y-1">
                 <Link
                   href="/"
-                  className="font-Kalame font-bold text-sm hover:text-teal-700 transition-colors py-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
+                  className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-4 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
                   onClick={handleNavLinkClick}
                 >
-                  <Car size="28" color="#0f766e" />
+                  {/* <Car size="28" color="#0f766e" /> */}
                   خلافی خودرو با جزئیات
                 </Link>
 
                 <Link
                   href="/?tab=sumation"
-                  className="font-Kalame font-bold text-sm hover:text-teal-700 transition-colors py-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
+                  className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-2 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
                   onClick={(e) => {
                     e.preventDefault();
                     router.push("/?tab=sumation");
                     closeDrawer();
                   }}
                 >
-                  <Car size="28" color="#0f766e" />
+                  {/* <Car size="28" color="#0f766e" /> */}
                   مجموع خلافی خودرو
                 </Link>
 
                 <Link
                   href="/motor"
-                  className="font-Kalame font-bold text-sm hover:text-teal-700 transition-colors py-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
+                  className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-2 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
                   onClick={handleNavLinkClick}
                 >
-                  <MotorcycleIcon size="28" color="#0f766e" />
+                  {/* <MotorcycleIcon size="28" color="#0f766e" /> */}
                   خلافی موتور با جزئیات
                 </Link>
 
                 <Link
                   href="/motor?tab=sumation"
-                  className="font-Kalame font-bold text-sm hover:text-teal-700 transition-colors py-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
+                  className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-2 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
                   onClick={(e) => {
                     e.preventDefault();
                     router.push("/motor?tab=sumation");
                     closeDrawer();
                   }}
                 >
-                  <MotorcycleIcon size="28" color="#0f766e" />
+                  {/* <MotorcycleIcon size="28" color="#0f766e" /> */}
                   مجموع خلافی موتور
                 </Link>
                 <Link
                   href="/licenseStatus"
-                  className="font-Kalame font-bold text-sm hover:text-teal-700 transition-colors py-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
+                  className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-2 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
                   onClick={(e) => {
                     e.preventDefault();
                     router.push("/licenseStatus");
                     closeDrawer();
                   }}
                 >
-                  <WalletCheck size="28" color="#0f766e" />
+                  {/* <WalletCheck size="28" color="#0f766e" /> */}
                   وضعیت صدور گواهینامه
                 </Link>
-                <div className="py-4 border-b border-gray-100">
+                <Link
+                  href="/negative"
+                  className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-2 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push("/negative");
+                    closeDrawer();
+                  }}
+                >
+                  {/* <WalletCheck size="28" color="#0f766e" /> */}
+                  نمره منفی گواهینامه
+                </Link>
+                <Link
+                  href="/active"
+                  className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-2 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push("/active");
+                    closeDrawer();
+                  }}
+                >
+                  {/* <WalletCheck size="28" color="#0f766e" /> */}
+                  پلاک فعال
+                </Link>
+                <Link
+                  href="/sanad"
+                  className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-2 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push("/sanad");
+                    closeDrawer();
+                  }}
+                >
+                  {/* <WalletCheck size="28" color="#0f766e" /> */}
+                  وضعیت سند و کارت ماشین
+                </Link>
+                <Link
+                  href="https://fc27.ir/"
+                  className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-2 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push("https://fc27.ir/");
+                    closeDrawer();
+                  }}
+                >
+                  {/* <WalletCheck size="28" color="#0f766e" /> */}
+                  آزمون آیین نامه
+                </Link>
+                <Link
+                  href="#"
+                  className="font-Kalame font-medium text-sm hover:text-teal-700 transition-colors pt-2 pb-4 border-b border-gray-100 flex items-center-safe gap-x-1.5"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push("#");
+                    closeDrawer();
+                  }}
+                >
+                  {/* <WalletCheck size="28" color="#0f766e" /> */}
+                  قیمت گذاری خودرو
+                </Link>
+                {/* <div className="py-4 border-b border-gray-100">
                   <Facilities />
-                </div>
-                <div className="py-4 border-b border-gray-100">
+                </div> */}
+                <div className=" border-b border-gray-100">
                   <App />
                 </div>
               </div>
