@@ -16,10 +16,10 @@ export default function App() {
   return (
     <>
       <Button
-        className="flex items-center-safe justify-start bg-transparent text-sm md:text-sm font-Kalame mb-3"
+        className="flex items-center-safe justify-start bg-transparent text-sm md:text-sm font-Kalame mb-3 md:mb-0 "
         onPress={onOpen}
       >
-        <MessageQuestion size="28" color="#0f766e" />
+        {/* <MessageQuestion size="28" color="#0f766e" /> */}
         پشتیبانی 
       </Button>
       <Modal

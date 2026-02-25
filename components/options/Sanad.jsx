@@ -115,11 +115,11 @@ const Sanad = () => {
       {/* Form */}
       <div className="flex flex-col gap-4 p-4">
         <h2 className="text-center">وضعیت کارت و سند ماشین</h2>
-        <img
+        {/* <img
           src="/images/ic_car_sanad.png"
           alt="ic_licesnse_status"
           className="w-28 mx-auto"
-        />
+        /> */}
         <p className="text-center text-xs md:text-sm">
           هزینه ی یکبار استعلام وضعیت کارت و سند ماشین ۱۶,170 تومان می باشد
         </p>

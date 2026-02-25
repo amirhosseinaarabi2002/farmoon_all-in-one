@@ -85,11 +85,11 @@ const LicenseInquiry = () => {
         نمره منفی گواهینامه
       </h2>
 
-      <img
+      {/* <img
         src="/images/ic_licesnse_status.png"
         alt="license"
         className="w-28 mx-auto"
-      />
+      /> */}
 
        <p className="text-center text-xs md:text-sm">
           هزینه ی یکبار استعلام نمره منفی ۱۶,170 تومان می باشد

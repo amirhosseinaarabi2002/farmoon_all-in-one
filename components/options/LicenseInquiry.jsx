@@ -79,11 +79,11 @@ const LicenseInquiry = () => {
       {/* Form */}
       <div className="flex flex-col gap-4 p-4">
         <h2 className="text-center">وضعیت گواهینامه</h2>
-        <img
+        {/* <img
           src="/images/ic_licesnse_status.png"
           alt="ic_licesnse_status"
           className="w-28 mx-auto"
-        />
+        /> */}
         <p className="text-center text-xs md:text-sm">
           هزینه ی یکبار استعلام وضعیت صدور گواهینامه ۱۶,170 تومان می باشد
         </p>
